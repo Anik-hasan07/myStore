@@ -18,9 +18,9 @@ export default function Signup() {
 
   return (
     <>
-      {/* {
+      {
       user &&
-       <Navigate to="/" replace={true}></Navigate>} */}
+       <Navigate to="/" replace={true}></Navigate>}
        {user?.email}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -39,6 +39,7 @@ export default function Signup() {
             noValidate
             className="space-y-6"
             onSubmit={handleSubmit((data) => {
+              console.log("🚀 ~ file: Signup.jsx:42 ~ onSubmit={handleSubmit ~ data:", data)
               dispatch(
                 createUserAsync({
                   email: data.email,
@@ -47,7 +48,7 @@ export default function Signup() {
                   role:'user'
                 })
               );
-              console.log(data);
+              
             })}
           >
             <div>

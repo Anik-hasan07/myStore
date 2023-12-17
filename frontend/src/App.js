@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import CartPage from './pages/CartPage';
 import Checkout from './pages/Checkout';
+import Protected from './features/auth/components/Protected';
 
 
 
@@ -12,9 +13,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      // <Protected>
         <Home></Home>
-      // </Protected>
     ),
   },
   // {
@@ -36,17 +35,17 @@ const router = createBrowserRouter([
   {
     path: '/cart',
     element: (
-      // <Protected>
+      <Protected>
         <CartPage></CartPage>
-      // </Protected>
+      </Protected>
     ),
   },
   {
     path: '/checkout',
     element: (
-      // <Protected>
+      <Protected>
         <Checkout></Checkout>
-      // </Protected>
+      </Protected>
     ),
   },
   // {
